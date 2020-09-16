@@ -62,6 +62,28 @@ static void *LedTask(const char *arg)
     return NULL;
 }
 
+static void OnButtonPressed(char *arg)
+{
+    (void) arg;
+
+    enum LedState nextState = LED_SPARK;
+    switch (g_ledState) {
+        case LED_ON:
+            nextState = LED_OFF;
+            break;
+        case LED_OFF:
+            nextState = LED_ON;
+            break;
+        case LED_SPARK:
+            nextState = LED_OFF;
+            break;
+        default:
+            break;
+    }
+
+    g_ledState = nextState;
+}
+
 static void LedExampleEntry(void)
 {
     osThreadAttr_t attr;
@@ -69,6 +91,10 @@ static void LedExampleEntry(void)
     GpioInit();
     IoSetFunc(WIFI_IOT_IO_NAME_GPIO_9, WIFI_IOT_IO_FUNC_GPIO_9_GPIO);
     GpioSetDir(WIFI_IOT_IO_NAME_GPIO_9, WIFI_IOT_GPIO_DIR_OUT);
+
+    IoSetFunc(WIFI_IOT_IO_NAME_GPIO_5, WIFI_IOT_IO_FUNC_GPIO_5_GPIO);
+    GpioRegisterIsrFunc(WIFI_IOT_IO_NAME_GPIO_5, WIFI_IOT_INT_TYPE_EDGE, WIFI_IOT_GPIO_EDGE_FALL_LEVEL_LOW,
+        OnButtonPressed, NULL);
 
     attr.name = "LedTask";
     attr.attr_bits = 0U;
