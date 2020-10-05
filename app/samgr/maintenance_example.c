@@ -111,7 +111,7 @@ static TaskConfig GetTaskConfig(Service *service)
     TaskConfig config = {LEVEL_HIGH, PRI_NORMAL,
                          0x800, 16, SHARED_TASK};
     if (service == &g_maintenExample4) {
-        config.priority = PRI_HIGH;
+        config.priority = PRI_ABOVE_NORMAL;
         config.stackSize = 0x400;
     }
     return config;

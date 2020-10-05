@@ -18,6 +18,7 @@
 #include <ohos_init.h>
 #include <samgr_lite.h>
 #include <cmsis_os.h>
+#include "time_adapter.h"
 
 typedef struct BootTestExample {
     Service service;

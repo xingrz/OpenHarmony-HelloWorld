@@ -18,6 +18,8 @@
 #include <securec.h>
 #include <los_base.h>
 #include <cmsis_os.h>
+#include "time_adapter.h"
+#include "hctest.h"
 
 #define TEST_LEN 10
 #define WAIT_PUB_PROC 1000

@@ -22,6 +22,8 @@
 #include "feature.h"
 #include "service.h"
 #include "samgr_lite.h"
+#include "time_adapter.h"
+#include "hctest.h"
 
 #define WAIT_FEATURE_PROC 1000
 enum MessageId {

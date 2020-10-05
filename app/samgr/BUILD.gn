@@ -28,5 +28,8 @@ static_library("example_samgr") {
         "//kernel/liteos_m/components/cmsis",
         "//foundation/distributedschedule/interfaces/kits/samgr_lite/samgr",
         "//foundation/distributedschedule/interfaces/kits/samgr_lite/communication/broadcast",
+        "//foundation/distributedschedule/services/samgr_lite/samgr/source",
+        "//foundation/distributedschedule/services/samgr_lite/samgr/adapter",
+        "//test/xts/tools/hctest/include",
     ]
 }
