@@ -21,6 +21,8 @@
 #include "feature.h"
 #include "service.h"
 #include "samgr_lite.h"
+#include "time_adapter.h"
+#include "hctest.h"
 
 typedef struct DefaultFeatureApi {
     INHERIT_IUNKNOWN;

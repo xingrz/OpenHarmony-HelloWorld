@@ -18,6 +18,7 @@
 #include <cmsis_os.h>
 #include "service.h"
 #include "samgr_lite.h"
+#include "time_adapter.h"
 
 #define TOTAL_SPEC_TASK_NUM 19
 static const char *g_specTaskService[] = {
