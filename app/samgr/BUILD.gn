@@ -12,24 +12,24 @@
 # limitations under the License.
 
 static_library("example_samgr") {
-    sources = [
-        "bootstrap_example.c",
-        "broadcast_example.c",
-        "feature_example.c",
-        "maintenance_example.c",
-        "service_example.c",
-        "service_recovery_example.c",
-        "specified_task_example.c",
-        "task_example.c",
-    ]
+  sources = [
+    "bootstrap_example.c",
+    "broadcast_example.c",
+    "feature_example.c",
+    "maintenance_example.c",
+    "service_example.c",
+    "service_recovery_example.c",
+    "specified_task_example.c",
+    "task_example.c",
+  ]
 
-    include_dirs = [
-        "//utils/native/lite/include",
-        "//kernel/liteos_m/components/cmsis",
-        "//foundation/distributedschedule/interfaces/kits/samgr_lite/samgr",
-        "//foundation/distributedschedule/interfaces/kits/samgr_lite/communication/broadcast",
-        "//foundation/distributedschedule/services/samgr_lite/samgr/source",
-        "//foundation/distributedschedule/services/samgr_lite/samgr/adapter",
-        "//test/xts/tools/hctest/include",
-    ]
+  include_dirs = [
+    "//utils/native/lite/include",
+    "//kernel/liteos_m/kal",
+    "//foundation/distributedschedule/interfaces/kits/samgr_lite/samgr",
+    "//foundation/distributedschedule/interfaces/kits/samgr_lite/communication/broadcast",
+    "//foundation/distributedschedule/services/samgr_lite/samgr/source",
+    "//foundation/distributedschedule/services/samgr_lite/samgr/adapter",
+    "//test/xts/tools/hctest/include",
+  ]
 }
