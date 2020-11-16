@@ -12,13 +12,11 @@
 # limitations under the License.
 
 static_library("led_example") {
-    sources = [
-        "led_example.c"
-    ]
+  sources = [ "led_example.c" ]
 
-    include_dirs = [
-        "//utils/native/lite/include",
-        "//kernel/liteos_m/components/cmsis/2.0",
-        "//base/iot_hardware/interfaces/kits/wifiiot_lite",
-    ]
+  include_dirs = [
+    "//utils/native/lite/include",
+    "//kernel/liteos_m/kal",
+    "//base/iot_hardware/interfaces/kits/wifiiot_lite",
+  ]
 }
