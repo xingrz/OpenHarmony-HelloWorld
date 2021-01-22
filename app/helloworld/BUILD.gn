@@ -3,6 +3,7 @@ static_library("helloworld") {
         "main.c",
         "hspi.c",
         "ssd1322.c",
+        "gui.c",
     ]
     include_dirs = [
         "//utils/native/lite/include",
