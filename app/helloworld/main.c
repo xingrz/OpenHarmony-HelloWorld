@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 #include "ohos_init.h"
 #include "ohos_types.h"
 
@@ -23,8 +24,22 @@ void HelloWorld(void)
 
     ssd1322_fill(0x0);
 
-    gui_draw((uint8_t *)text, SW, SH, 0, 0, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    ssd1322_draw(gui_render());
+    int offset = SCREEN_WIDTH;
+    while (1)
+    {
+        int sx = offset > 0 ? 0 : -offset;
+        int dx = offset > 0 ? offset : 0;
+
+        gui_fill(0x0, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        gui_draw((uint8_t *)text, SW, SH, sx, 0, dx, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        ssd1322_draw(gui_render());
+
+        usleep(500);
+
+        offset -= 2;
+        if (offset <= -SW)
+            offset = SCREEN_WIDTH;
+    }
 }
 
 SYS_RUN(HelloWorld);
