@@ -1,8 +1,11 @@
 static_library("helloworld") {
     sources = [
-        "main.c"
+        "main.c",
+        "hspi.c",
+        "ssd1322.c",
     ]
     include_dirs = [
-        "//utils/native/lite/include"
+        "//utils/native/lite/include",
+        "//base/iot_hardware/interfaces/kits/wifiiot_lite",
     ]
 }
