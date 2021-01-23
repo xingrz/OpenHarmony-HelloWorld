@@ -91,7 +91,7 @@ ssd1322_prepare(void)
 	write_data8(0x1C + 0);
 	write_data8(0x1C + SCREEN_WIDTH / 4 - 1);
 
-	// Row Column Address
+	// Set Row Address
 	write_reg(0x75);
 	write_data8(0);
 	write_data8(SCREEN_HEIGHT - 1);
